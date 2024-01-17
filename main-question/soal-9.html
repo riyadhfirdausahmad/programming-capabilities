@@ -65,6 +65,9 @@ bersihkan localStoragenya. -->
           welcomeLabel.textContent = "Selamat datang,";
           console.log(storedUsername);
           usernameLabel.textContent = storedUsername;
+
+          usernameInput.value = "";
+          passwordInput.value = "";
         } else {
           alert("Username atau password salah. Coba lagi.");
         }
