@@ -36,6 +36,7 @@
     <table id="data-table">
       <thead>
         <tr>
+          <th>User ID</th>
           <th>ID</th>
           <th>Title</th>
           <th>Body</th>
@@ -69,10 +70,12 @@
 
         data.forEach((item) => {
           const row = tableBody.insertRow();
-          const idCell = row.insertCell(0);
-          const titleCell = row.insertCell(1);
-          const bodyCell = row.insertCell(2);
+          const userIdCell = row.insertCell(0);
+          const idCell = row.insertCell(1);
+          const titleCell = row.insertCell(2);
+          const bodyCell = row.insertCell(3);
 
+          userIdCell.textContent = item.userId;
           idCell.textContent = item.id;
           titleCell.textContent = item.title;
           bodyCell.textContent = item.body;
