@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Data</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      button {
+        cursor: pointer;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Data from HTTP Request</h1>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      fetch("http://jsonplaceholder.typicode.com/posts")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          createTable(data.slice(0, 10));
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
+      function createTable(data) {
+        const tableBody = document.querySelector("#data-table tbody");
+
+        data.forEach((item) => {
+          const row = tableBody.insertRow();
+          const userIdCell = row.insertCell(0);
+          const idCell = row.insertCell(1);
+          const titleCell = row.insertCell(2);
+          const bodyCell = row.insertCell(3);
+          const actionCell = row.insertCell(4);
+
+          userIdCell.textContent = item.userId;
+          idCell.textContent = item.id;
+          titleCell.textContent = item.title;
+          bodyCell.textContent = item.body;
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Hapus";
+          deleteButton.addEventListener("click", function () {
+            deleteRow(row);
+          });
+
+          actionCell.appendChild(deleteButton);
+        });
+      }
+
+      function deleteRow(row) {
+        const tableBody = document.querySelector("#data-table tbody");
+        tableBody.removeChild(row);
+      }
+    </script>
+  </body>
+</html>

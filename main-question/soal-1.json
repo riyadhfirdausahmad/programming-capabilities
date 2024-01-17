@@ -1,0 +1,21 @@
+{
+    "data": [
+      {
+        "nama": "Abdul Gazalli",
+        "umur": 30,
+        "pekerjaan": "Pengembang Perangkat Lunak"
+      },
+      {
+        "nama": "Markus Santosa",
+        "umur": 28,
+        "pekerjaan": "Desainer Grafis"
+      },
+      {
+        "nama": "Boby Irawan",
+        "umur": 35,
+        "pekerjaan": "Manajer Proyek"
+      }
+    ]
+  }
+
+  

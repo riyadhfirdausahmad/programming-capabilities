@@ -1,0 +1,63 @@
+<!-- Tampilkan 1 label dan buatlah 1 tombol yang bisa merubah value label. Label adalah
+value dari json yang sudah anda bikin di soal no 1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Label Changer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      .label-container {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="labelContainer" class="label-container">
+      <span id="namaLabel">Nama: Nadeo Wirawan</span><br />
+      <span id="umurLabel">Umur: 22</span><br />
+      <span id="pekerjaanLabel">Pekerjaan: Pengembang Perangkat Lunak</span>
+    </div>
+    <button onclick="ubahNilaiLabel()">Ubah Nilai Label</button>
+
+    <script>
+      var jsonData = {
+        data: [
+          {
+            nama: "Abdul Gazalli",
+            umur: 30,
+            pekerjaan: "Pengembang Perangkat Lunak",
+          },
+        ],
+      };
+
+      var labelIndex = 0;
+
+      function ubahNilaiLabel() {
+        labelIndex = (labelIndex + 1) % jsonData.data.length;
+        updateLabel();
+      }
+
+      function updateLabel() {
+        var data = jsonData.data[labelIndex];
+        document.getElementById("namaLabel").textContent = "Nama: " + data.nama;
+        document.getElementById("umurLabel").textContent = "Umur: " + data.umur;
+        document.getElementById("pekerjaanLabel").textContent =
+          "Pekerjaan: " + data.pekerjaan;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+Answer
+- Line 24: Tambahkan tanda comma setelah }
+- Line 428: Tambahkan tanda " sebelum ,
+- Line 437: Tambahkan nilai string pada "valueAsString":  sebagai contoh "valueAsString": 1234
+- Line 540: Tambahkan variable i pada cleanA[] menjadi cleanA[i]
+- Line 527: Ubah var tmpStrb = b.attributes; menjadi var tmpStrb = b.attribute;
+- Line 490 - 496: Uncomment fungsi compare 

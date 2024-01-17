@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Login</title>
+  </head>
+  <body>
+    <div id="login-container">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Masukkan username" />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Masukkan password" />
+
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="user-info" style="display: none">
+      <label id="welcome-label"></label>
+      <span id="username-label"></span>!
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+      localStorage.setItem("username", "riyadh");
+      localStorage.setItem("password", "12345678");
+      // Fungsi untuk melakukan login
+      function login() {
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const userContainer = document.getElementById("user-info");
+        const welcomeLabel = document.getElementById("welcome-label");
+        const usernameLabel = document.getElementById("username-label");
+        const loginContainer = document.getElementById("login-container");
+
+        // Mengambil data dari localStorage
+        const storedUsername = localStorage.getItem("username");
+        const storedPassword = localStorage.getItem("password");
+
+        // Memeriksa apakah input sesuai dengan data yang disimpan di localStorage
+        if (
+          usernameInput.value === storedUsername &&
+          passwordInput.value === storedPassword
+        ) {
+          // Menyembunyikan elemen login
+          loginContainer.style.display = "none";
+
+          // Menampilkan elemen user info
+          userContainer.style.display = "block";
+
+          // Menampilkan selamat datang
+          welcomeLabel.textContent = "Selamat datang,";
+          console.log(storedUsername);
+          usernameLabel.textContent = storedUsername;
+        } else {
+          alert("Username atau password salah. Coba lagi.");
+        }
+      }
+
+      // Fungsi untuk logout
+      function logout() {
+        const userContainer = document.getElementById("user-info");
+        const loginContainer = document.getElementById("login-container");
+
+        // Menghapus data dari localStorage
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+
+        // Menampilkan kembali elemen login
+        loginContainer.style.display = "block";
+
+        // Menyembunyikan elemen user info
+        userContainer.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
