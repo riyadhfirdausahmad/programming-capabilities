@@ -1,3 +1,12 @@
+// Tambahkan header pada saat request ke API di soal no 10 :
+// a. User-id : ifabula
+// b. Scope: user
+// Validasilah proses request ke API anda dan jika header diatas tidak cocok, balikan
+// response :
+// {
+// responseCode: 401,
+// responseMessage:
+
 const express = require("express");
 const bodyParser = require("body-parser");
 

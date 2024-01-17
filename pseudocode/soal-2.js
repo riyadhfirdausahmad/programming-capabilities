@@ -1,4 +1,4 @@
-// 2.	Buatlah deret bilangan Fibonacci sebanyak 20
+// Buatlah deret bilangan Fibonacci sebanyak 20
 // 0 1 1 2 3 5 8 … dan seterusnya
 
 // Answer:

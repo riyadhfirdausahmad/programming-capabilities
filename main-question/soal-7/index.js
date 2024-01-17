@@ -1,3 +1,7 @@
+// Buatlah function hashing dari string berikut menggunakan sha256:
+// tanggalhariini+namadepananda+pria+ifabula. Contoh : 01112018kenpriaifabula. Hasil
+// hashing akan di cetak pada console log
+
 const CryptoJS = require("crypto-js");
 
 function hashString(inputString) {

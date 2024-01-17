@@ -1,4 +1,4 @@
-// 4.	Buatlah tampilan terbilang dari variable x yang berupa 4 digit angka ( lebih besar dari 2000 ) :
+// Buatlah tampilan terbilang dari variable x yang berupa 4 digit angka ( lebih besar dari 2000 ) :
 // Contoh :
 // 2234 = Dua Ribu Dua Ratus Tiga Puluh Empat
 // 8500 = Delapan Ribu Lima Ratus

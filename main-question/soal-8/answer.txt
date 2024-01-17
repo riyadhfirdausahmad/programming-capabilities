@@ -1,3 +1,7 @@
+Question:
+Cobalah melakukan debuging pada file "testdebug.html" dan perbaiki file tersebut
+kemudian jabarkan errornya di line mana saja.
+
 Answer
 - Line 24: Tambahkan tanda comma setelah }
 - Line 428: Tambahkan tanda " sebelum ,
